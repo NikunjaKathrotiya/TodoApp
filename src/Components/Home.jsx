@@ -102,7 +102,7 @@ export default function Home() {
     const updatedFormData = [...formData, newFormData];
     setFormData(updatedFormData);
     localStorage.setItem("formData", JSON.stringify(updatedFormData));
-    toast.success("Item added!");
+    toast.success("Item added successfully!");
   };
 
   const handleDragStart = (id) => (event) => {
@@ -120,6 +120,7 @@ export default function Home() {
       const currentSection = draggedItem.tasksection;
 
       let validNextSection = null;
+      
       if (currentSection === "To Do" && targetSection === "In-Progress") {
         validNextSection = "In-Progress";
       } else if (
